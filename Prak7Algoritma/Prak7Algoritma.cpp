@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int arr[20];
-int n;
-int i;
+int arr[20]; //array to be searched
+int n;  //number of elements in the array
+int i;  //index of array element
 
 void input() {
 	while (true) {
@@ -15,6 +15,8 @@ void input() {
 		else
 			cout << "\nArray should have minimum 1 and maximum 20 elements.\n\n";
 	}
+
+	//accept array elements
 	cout << "\n---------------------\n";
 	cout << " Enter array elements \n";
 	cout << "---------------------\n";
@@ -28,18 +30,18 @@ void input() {
 void LinearSearch()
 {
 	char ch;
-	int ctr;
+	int ctr;  //number of comparisons
 	int item;
 
 	do
 	{
-		
+		//accept the number to be searched	
 		cout << "\nEnter the element you want to search: "; //step 1
 		cin >> item;
 
 		ctr = 0;
-		i = 0; 
-		while (i < n) 
+		i = 0; //step 2
+		while (i < n) //step 3
 		{
 			ctr++;
 			if (arr[i] == item)
@@ -47,7 +49,7 @@ void LinearSearch()
 				cout << "\n" << item << " Found at position " << (i + 1) << endl;
 				break;
 			}
-			i++; 
+			i++; //step 4
 		}
 		if (i == n)
 			cout << "\n" << item << "Not found in the array\n";
@@ -55,8 +57,7 @@ void LinearSearch()
 
 		cout << "\nContinue search (y/n): ";
 		cin >> ch;
-	} 
-	while ((ch = 'y') || (ch == 'Y'));
+	} while ((ch = 'y') || (ch == 'Y'));
 }
 
 void display()
